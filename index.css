@@ -1,0 +1,157 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eef3ff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    color: #1e293b;
+}
+
+/* Main card */
+.todo-app {
+    width: 100%;
+    max-width: 650px;
+    background: #ffffff;
+    padding: 36px;
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(37, 99, 235, 0.10);
+}
+
+/* Heading */
+.todo-header {
+    margin-bottom: 28px;
+}
+
+.todo-header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.todo-header p {
+    color: #64748b;
+    font-size: 16px;
+}
+
+/* Input and button */
+.input-container {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+#input-button {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#input-button:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+#input-button::placeholder {
+    color: #94a3b8;
+}
+
+.task-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 18px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.task-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.plus {
+    font-size: 22px;
+}
+
+/* Task list */
+#task-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#task-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background: #f8fafc;
+    border: 1px solid #e8edf4;
+    border-radius: 10px;
+    overflow-wrap: anywhere;
+    transition: background 0.2s;
+}
+
+#task-list li:hover {
+    background: #f1f5f9;
+}
+
+/* Checkboxes */
+#task-list input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    cursor: pointer;
+    accent-color: #2563eb;
+}
+
+/* Task text */
+#task-list span {
+    flex: 1;
+    line-height: 1.5;
+}
+
+#task-list input[type="checkbox"]:checked + span {
+    text-decoration: line-through;
+    color: #94a3b8;
+}
+
+/* Mobile layout */
+@media (max-width: 480px) {
+    .todo-app {
+        padding: 22px 16px;
+    }
+
+    .todo-header h1 {
+        font-size: 26px;
+    }
+
+    .input-container {
+        flex-direction: column;
+    }
+
+    .task-button {
+        width: 100%;
+    }
+}
